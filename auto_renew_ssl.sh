@@ -1,0 +1,1 @@
+sudo docker exec -it nginx-proxy-manager_app_1 /usr/bin/certbot renew
