@@ -4,9 +4,9 @@ secrets:
   # Secrets are single-line text files where the sole content is the secret
   # Paths in this example assume that secrets are kept in local folder called ".secrets"
   DB_ROOT_PWD:
-    file: .secrets/db_root_pwd.txt
+    file: ./data/secrets/db_root_pwd.txt
   MYSQL_PWD:
-    file: .secrets/mysql_pwd.txt
+    file: ./data/secrets/mysql_pwd.txt
 
 services:
   app:
@@ -31,8 +31,8 @@ services:
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
     volumes:
-      - ./NPM_data/data:/data
-      - ./NPM_data/letsencrypt:/etc/letsencrypt
+      - ./data/NPM_data/data:/data
+      - ./data/NPM_data/letsencrypt:/etc/letsencrypt
     secrets:
       - MYSQL_PWD
     depends_on:
@@ -50,7 +50,7 @@ services:
       MYSQL_PASSWORD__FILE: /run/secrets/MYSQL_PWD
       MARIADB_AUTO_UPGRADE: '1'
     volumes:
-      - ./mariadb_data/mysql:/var/lib/mysql
+      - ./data/mariadb_data/mysql:/var/lib/mysql
     secrets:
       - DB_ROOT_PWD
       - MYSQL_PWD
