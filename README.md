@@ -5,6 +5,12 @@
 docker compose up -d
 ```
 
+docker compose가 안깔려 있다면?
+docker: 'compose' is not a docker command. 에러가 날때,
+```
+sudo apt install docker-compose-v2
+```
+
 ## Renewing Certificates
 
 생성되어 있는 SSL 전체를 갱신
