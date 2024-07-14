@@ -1,13 +1,6 @@
 # nginx-proxy-manager
 
 ## Usage
-
-```bash
-docker-compose up -d
-```
-
-If using docker-compose-plugin
-
 ```bash
 docker compose up -d
 ```
